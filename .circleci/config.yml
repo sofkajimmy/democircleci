@@ -36,10 +36,10 @@ workflows:
           name: construccion 
       - test:
           name: Test 
-          requires:
-            - compile
+          #requires:
+          #  - compile
       - deploy:
           name: Despliegue
-          requires:
-            - test
-            
+          #requires:
+          #  - test
+
