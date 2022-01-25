@@ -15,7 +15,10 @@ jobs:
           name: "Compilacion"
           command: |
             echo "compilando app Docker!"
+            echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin            
             docker build -t kamentsa/democircleci .
+            docker tag kamentsa/democircleci kamentsa/democircleci:${CIRCLE_BUILD_NUM}
+            docker push kamentsa/democircleci:${CIRCLE_BUILD_NUM}
   test:
     docker:
       - image: cimg/base:stable
