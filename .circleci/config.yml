@@ -13,7 +13,7 @@ jobs:
       - run:
           name: "Compilacion"
           command: |
-            "echo compilando app Docker!"
+            echo "compilando app Docker!"
             docker build -t kamentsa/democircleci .
   test:
     docker:
