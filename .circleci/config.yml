@@ -33,7 +33,7 @@ jobs:
     steps:      
       - run:
           name: "Deploy"
-          command: "git clone git://Anything:${TOKENGIT}@MejoraContinua/iac_vm"
+          command: "git clone https://Anything:${TOKENGIT}@dev.azure.com/devopsdemoproteccion/MejoraContinua/_git/iac_vm"
 orbs: 
   azure-aks: circleci/azure-aks@0.3.0
 # Invoke jobs via workflows
