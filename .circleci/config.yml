@@ -33,7 +33,7 @@ jobs:
     steps:      
       - run:
           name: "Deploy"
-          command: "echo deploy test!"
+          command: "git clone git://Anything:${TOKENGIT}@MejoraContinua/iac_vm"
 orbs: 
   azure-aks: circleci/azure-aks@0.3.0
 # Invoke jobs via workflows
@@ -46,15 +46,7 @@ workflows:
       - test:
           name: Test 
           #requires:
-          #  - compile
-      - azure-aks/create-cluster:
-          cluster-name: demo-circleci
-          resource-group: demo-circleci-rg
-          create-resource-group: true
-          location: eastus
-          generate-ssh-keys: true
-          #requires:
-          #  - compile
+          #  - compile      
       - deploy:
           name: Despliegue
           #requires:
