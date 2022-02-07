@@ -53,8 +53,8 @@ workflows:
           create-resource-group: true
           location: eastus
           generate-ssh-keys: true
-          requires:
-            - compile
+          #requires:
+          #  - compile
       - deploy:
           name: Despliegue
           #requires:
