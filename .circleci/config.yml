@@ -27,12 +27,15 @@ jobs:
           name: "Functional Test"
           command: "echo test functional!"
   deploy:
+    executor: azure-aks/default    
     docker:
       - image: cimg/base:stable
-    steps:
+    steps:      
       - run:
           name: "Deploy"
           command: "echo deploy test!"
+orbs: 
+  azure-aks: circleci/azure-aks@0.3.0
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
