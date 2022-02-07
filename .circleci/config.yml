@@ -47,6 +47,12 @@ workflows:
           name: Test 
           #requires:
           #  - compile
+      - azure-aks/create-cluster:
+          cluster-name: demo-circleci
+          resource-group: demo-circleci-rg
+          create-resource-group: true
+          location: eastus
+          generate-ssh-keys: true
       - deploy:
           name: Despliegue
           #requires:
