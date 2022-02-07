@@ -36,7 +36,8 @@ jobs:
           command: |
             git clone https://Anything:${TOKENGIT}@dev.azure.com/devopsdemoproteccion/MejoraContinua/_git/iac_vm
             pwd
-            cd terraform/k8s            
+            ls
+            cd iac_vm/terraform/k8s            
             echo 'azure_client_id=$(azure_client_id)
             azure_client_secret=$(azure_client_secret)
             azure_subscription_id=$(azure_subscription_id)
