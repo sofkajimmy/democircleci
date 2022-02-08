@@ -29,7 +29,7 @@ jobs:
   deploy:
     executor: azure-aks/default    
     docker:
-      - image: cimg/base:stable
+      - image: hashicorp/terraform:latest
     steps:      
       - run:
           name: "Deploy"
@@ -45,6 +45,7 @@ jobs:
             terraform init
             terraform plan
             terraform apply -auto-approve
+            rm terraform.tfvars
 orbs: 
   azure-aks: circleci/azure-aks@0.3.0
 # Invoke jobs via workflows
