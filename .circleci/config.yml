@@ -43,7 +43,7 @@ jobs:
             echo 'azure_subscription_id=_AZURESUBSCRIPTIONID_'>>terraform.tfvars
             echo 'azure_tenant_id=_AZURETENANT_'>>terraform.tfvars
             echo " ---  $organization --  ${AZURECLIENTID} ${AZURESUBSCRIPTIONID} ${AZURETENANT}"
-            sed -i "s~_AZURECLIENTID_~$(AZURECLIENTID)~" terraform.tfvars
+            sed -i "s~_AZURECLIENTID_~${AZURECLIENTID}~" terraform.tfvars
           
             cat terraform.tfvars             
             terraform init
