@@ -37,16 +37,10 @@ jobs:
             git clone https://Anything:${TOKENGIT}@dev.azure.com/devopsdemoproteccion/MejoraContinua/_git/iac_vm
             pwd
             ls
-            cd iac_vm/terraform/k8s
-            echo ${AZURECLIENTID}            
-            echo 'azure_client_id=$AZURECLIENTID'>>terraform.tfvars
-            echo 'azure_client_secret=$AZURECLIENTSECRET'>>terraform.tfvars
-            echo 'azure_subscription_id=$AZURESUBSCRIPTIONID'>>terraform.tfvars
-            echo 'azure_tenant_id=$AZURETENANT'>>terraform.tfvars
-            cat terraform.tfvars             
+            cd iac_vm/terraform/k8s            
             terraform init
             terraform plan
-            terraform apply -auto-approve
+            terraform apply -var azure_client_id="${AZURECLIENTID}" -var azure_client_secret="${AZURECLIENTSECRET}" -var azure_subscription_id="${AZURESUBSCRIPTIONID}" -var azure_tenant_id="${AZURETENANT}" -auto-approve
             
 orbs: 
   azure-aks: circleci/azure-aks@0.3.0
