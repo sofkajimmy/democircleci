@@ -35,8 +35,7 @@ jobs:
           name: "Deploy"
           command: |
             git clone https://Anything:${TOKENGIT}@dev.azure.com/devopsdemoproteccion/MejoraContinua/_git/iac_vm
-            pwd
-            ls
+            az login -u ${AZURE_USERNAME} -p ${AZURE_PASSWORD}
             cd iac_vm/terraform/k8s            
             echo 'azure_client_id="_AZURECLIENTID_"'>>terraform.tfvars
             echo 'azure_client_secret="_AZURECLIENTSECRET_"'>>terraform.tfvars
