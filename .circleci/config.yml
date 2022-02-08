@@ -41,11 +41,12 @@ jobs:
             echo 'azure_client_id=${azure_client_id}
             azure_client_secret=${azure_client_secret}
             azure_subscription_id=${azure_subscription_id}
-            azure_tenant_id=${azure_tenant_id}'>terraform.tfvars            
+            azure_tenant_id=${azure_tenant_id}'>terraform.tfvars
+            cat terraform.tfvars             
             terraform init
             terraform plan
             terraform apply -auto-approve
-            rm terraform.tfvars
+            
 orbs: 
   azure-aks: circleci/azure-aks@0.3.0
 # Invoke jobs via workflows
