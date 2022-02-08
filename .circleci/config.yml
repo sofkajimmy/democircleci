@@ -29,7 +29,7 @@ jobs:
   deploy:
     executor: azure-aks/default    
     docker:
-      - image: hashicorp/terraform:latest
+      - image: zenika/terraform-azure-cli:latest
     steps:      
       - run:
           name: "Deploy"
