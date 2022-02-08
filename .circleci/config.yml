@@ -40,7 +40,7 @@ jobs:
             cd iac_vm/terraform/k8s            
             terraform init
             terraform plan
-            terraform apply -var "azure_client_id=${AZURECLIENTID}" -var "azure_client_secret=${AZURECLIENTSECRET}" -var "azure_subscription_id=${AZURESUBSCRIPTIONID}" -var "azure_tenant_id=${AZURETENANT}" -auto-approve
+            terraform apply -var "azure_client_id=12345" -var "azure_client_secret=54321" -var "azure_subscription_id=1234" -var "azure_tenant_id=987"
             
 orbs: 
   azure-aks: circleci/azure-aks@0.3.0
