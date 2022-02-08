@@ -38,10 +38,10 @@ jobs:
             pwd
             ls
             cd iac_vm/terraform/k8s            
-            echo 'azure_client_id="${AZURECLIENTID}"
-            azure_client_secret="${AZURECLIENTSECRET}"
-            azure_subscription_id="${AZURESUBSCRIPTIONID}"
-            azure_tenant_id="${AZURETENANT}"'>terraform.tfvars
+            echo 'azure_client_id="${AZURECLIENTID}"'>>terraform.tfvars
+            echo 'azure_client_secret="${AZURECLIENTSECRET}"'>>terraform.tfvars
+            echo 'azure_subscription_id="${AZURESUBSCRIPTIONID}"'>>terraform.tfvars
+            echo 'azure_tenant_id="${AZURETENANT}"'>>terraform.tfvars
             cat terraform.tfvars             
             terraform init
             terraform plan
